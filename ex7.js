@@ -1,5 +1,11 @@
-function inOrder(msg,callback1,callback2){
- callback1(msg);
- callback2(msg);
+function inOrder(callback1,callback2){
+    callback1
+    callback2
 }
-inOrder("hello",console.log);
+var logOne=setTimeout(function (){
+    console.log("One!");
+}, Math.random()*1000);
+var logTwo=setTimeout(function (){
+    console.log("Two!");
+}, Math.random()*1000);
+inOrder(logOne,logTwo);
